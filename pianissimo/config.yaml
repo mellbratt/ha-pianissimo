@@ -1,0 +1,25 @@
+name: Pianissimo (Swedish speech-to-text)
+version: "0.1.0"
+slug: pianissimo
+description: Local Swedish speech-to-text for Assist, using Klang Pianissimo
+url: https://github.com/mellbratt/ha-pianissimo
+arch:
+  - aarch64
+  - amd64
+init: false
+hassio_api: true
+discovery:
+  - wyoming
+map: []
+options:
+  quantization: int8
+  pad_seconds: 0.5
+  debug_logging: false
+schema:
+  quantization: list(int8|int4|fp16|fp32)
+  pad_seconds: float(0,2)
+  debug_logging: bool
+ports:
+  10300/tcp: null
+ports_description:
+  10300/tcp: Wyoming protocol (only needed for access from outside Home Assistant)
